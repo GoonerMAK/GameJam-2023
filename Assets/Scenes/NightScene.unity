@@ -133,8 +133,9 @@ GameObject:
   m_Component:
   - component: {fileID: 104550970}
   - component: {fileID: 104550969}
+  - component: {fileID: 104550971}
   m_Layer: 0
-  m_Name: AnimationSheet_Character_0
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -207,6 +208,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &104550971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104550968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40843681ca89ad546bf3e101f3dca635, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalInput: 0
+  verticalInput: 0
+  speed: 2
+  facingRight: 1
 --- !u!1 &190631883
 GameObject:
   m_ObjectHideFlags: 0
@@ -50542,7 +50559,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 25
+      m_TileSpriteIndex: 57
       m_TileMatrixIndex: 1
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -57977,8 +57994,8 @@ Tilemap:
     m_Data: {fileID: -935883203, guid: cca536892d2be614980f29c761f9c7c5, type: 3}
   - m_RefCount: 4
     m_Data: {fileID: 9899314, guid: cca536892d2be614980f29c761f9c7c5, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 21300000, guid: 3eb58773d585bdd489592186fcdbeb99, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 4
     m_Data: {fileID: -1402922194, guid: 6a2ffaddd71063c49a7b1bc43614dd07, type: 3}
   - m_RefCount: 5
@@ -58041,8 +58058,8 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: 21300000, guid: 3eb58773d585bdd489592186fcdbeb99, type: 3}
   m_TileMatrixArray:
   - m_RefCount: 5750
     m_Data:
@@ -59613,6 +59630,7 @@ GameObject:
   - component: {fileID: 1770573207}
   - component: {fileID: 1770573206}
   - component: {fileID: 1770573209}
+  - component: {fileID: 1770573210}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -59714,3 +59732,17 @@ MonoBehaviour:
   m_CropFrameX: 0
   m_CropFrameY: 0
   m_StretchFill: 0
+--- !u!114 &1770573210
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1770573205}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f9d2e0ab6359f244b44a8cf9b0960b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 104550968}
+  offset: {x: 0, y: 0, z: -10}
