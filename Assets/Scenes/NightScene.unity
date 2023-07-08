@@ -183,7 +183,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -4
+  m_SortingOrder: 0
   m_Sprite: {fileID: -1167799714, guid: e808fa9f9f38dbd4399df5d45e2431be, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -208,7 +208,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &104550971
 MonoBehaviour:
@@ -58970,7 +58970,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &577243388
 GameObject:
@@ -59296,7 +59296,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &949764393
 GameObject:
@@ -59464,7 +59464,7 @@ Transform:
   - {fileID: 1561657599}
   - {fileID: 509136504}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1107195897
 GameObject:
@@ -61375,8 +61375,69 @@ Transform:
   - {fileID: 190631884}
   - {fileID: 1360691723}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1725669710
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4408552899548172747, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_Name
+      value: VillagerBearded
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.38940638
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.10321883
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4842784590912166502, guid: 132438512d945c14595e7a00d51436b6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 132438512d945c14595e7a00d51436b6, type: 3}
 --- !u!1 &1770573205
 GameObject:
   m_ObjectHideFlags: 0
