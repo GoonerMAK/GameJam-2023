@@ -5,11 +5,15 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     public Vector3 spawnPos; //spawn position
-    public float spawnRangeX; //range between which animals will be spawned
-    public float spawnRangeY; //Y coordinate of spawn
+    public float minSpawnX; //range between which animals will be spawned
+    public float maxSpawnX;
+    public float minSpawnY; //Y coordinate of spawn
+    public float maxSpawnY;
     public float startDelay;
     public float spawnInterval;
-    public GameObject villager;
+    public GameObject[] villagerPrefabs;
+    public int villagerIndex;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,9 +28,11 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnRandomVillager()
     {
-        spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), Random.Range(-spawnRangeY, spawnRangeY), 0);
+        villagerIndex = Random.Range(0, villagerPrefabs.Length);
+
+        spawnPos = new Vector3(Random.Range(minSpawnX, maxSpawnX), Random.Range(minSpawnY, maxSpawnY), 0);
 
         //instantiate based on index of randomly generated index
-        Instantiate(villager, spawnPos, villager.transform.rotation);
+        Instantiate(villagerPrefabs[villagerIndex], spawnPos, villagerPrefabs[villagerIndex].transform.rotation);
     }
 }
