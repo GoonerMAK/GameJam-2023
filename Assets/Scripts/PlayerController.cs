@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,15 +10,32 @@ public class PlayerController : MonoBehaviour
     public float speed;
     public bool facingRight;
 
+    public ContactFilter2D movementFilter;
+    public float collisonOffset = 0.05f;
+
+    // RigidBody2D rb;
+    Vector2 movementInput;
+    List<RaycastHit2D> castCollisions = new List<RaycastHit2D>();
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        // rb = GetComponent<RigidBody2D>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        // if(movementInput != Vector2.zero) {
+        //     int count = rb.Cast( 
+        //         movementInput, //x and y values
+        //         movementFilter, //settings for determing where collison can occur
+        //         castCollisions, //list of stored collisions
+        //         speed * Time.fixedDeltaTime * collisonOffset //amount to cast = movement + offset
+        //     );
+        // }
+
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * speed * Time.deltaTime * horizontalInput);
 
