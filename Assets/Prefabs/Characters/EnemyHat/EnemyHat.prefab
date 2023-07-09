@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 1180405269803438421}
   - component: {fileID: 390198099068436747}
   - component: {fileID: 1713582682581784670}
-  m_Layer: 0
+  - component: {fileID: -5425341462189687895}
+  m_Layer: 7
   m_Name: EnemyHat
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -121,7 +122,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -197,3 +198,16 @@ MonoBehaviour:
   verticalSpeed: 0
   facingRight: 0
   animator: {fileID: 4510825646312173766}
+--- !u!114 &-5425341462189687895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4954291308498565968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25ae48ea0a3ec04daed51288b6abd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 0

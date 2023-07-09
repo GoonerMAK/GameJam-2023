@@ -17,6 +17,11 @@ public class TestingMovement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
+    [SerializeField] private Transform attackPoint;
+    [SerializeField] private float attackRange = .12f;
+    private float attackDamage = 50f;
+    [SerializeField] private LayerMask enemyLayer;
+
     public Animator animator;
     private bool isAttacking = false;
 
@@ -26,37 +31,13 @@ public class TestingMovement : MonoBehaviour
 
         vertical = Input.GetAxisRaw("Vertical");
 
-        animator.SetFloat("Speed", Mathf.Abs(horizontal));
+        float movement = Mathf.Max(Mathf.Abs(horizontal), Mathf.Abs(vertical));
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            animator.SetBool("IsJumping", true);
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-        }
-
-        else if (IsGrounded())
-        {
-            animator.SetBool("IsJumping", false);
-        }
-
-        if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)        // Moving in air
-        {
-            rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.2f);
-        }
+        animator.SetFloat("Speed", movement);
 
         if (Input.GetKeyDown(KeyCode.F))
         {
-            if (!isAttacking)
-            {
-                animator.SetTrigger("Attacking");
-                isAttacking = true;
-            }
-            else
-            {
-                animator.ResetTrigger("Attacking");
-                animator.SetTrigger("Attacking");
-                playerAudio.PlayOneShot(hitSound);
-            }
+            Attack();
         }
 
         //play soound if horizontal and vertical inputs are taken
@@ -75,11 +56,6 @@ public class TestingMovement : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, vertical * speed);
     }
 
-    private bool IsGrounded()
-    {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
-    }
-
     private void Flip()
     {
         if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
@@ -90,4 +66,43 @@ public class TestingMovement : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
+
+    private void Attack()
+    {
+        // Play Attack Animation
+        if (!isAttacking)
+        {
+            animator.SetTrigger("Attacking");
+            isAttacking = true;
+        }
+        else
+        {
+            animator.ResetTrigger("Attacking");
+            animator.SetTrigger("Attacking");
+            playerAudio.PlayOneShot(hitSound);
+        }
+
+
+        // Detect all the Enemies
+        Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
+
+
+        // Damage all the Enemies
+        foreach (Collider2D enemy in hitEnemies)
+        {
+            enemy.GetComponent<NPC_Damage>().TakeDamage(attackDamage);
+        }
+
+    }
+
+    void OnDrawGizmosSelected()         // Drawing the attacking point so that we can see that in the editor
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.DrawWireSphere(attackPoint.position, attackRange);
+    }
+
+
 }

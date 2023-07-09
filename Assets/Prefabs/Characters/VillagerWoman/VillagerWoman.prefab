@@ -14,7 +14,8 @@ GameObject:
   - component: {fileID: 763442660716029269}
   - component: {fileID: 3430106093447233541}
   - component: {fileID: -1333525971868634686}
-  m_Layer: 0
+  - component: {fileID: 5143294515678865314}
+  m_Layer: 7
   m_Name: VillagerWoman
   m_TagString: Villager
   m_Icon: {fileID: 0}
@@ -121,7 +122,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 100
+  m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -197,3 +198,16 @@ MonoBehaviour:
   verticalSpeed: 0
   facingRight: 0
   animator: {fileID: 5941512002227638285}
+--- !u!114 &5143294515678865314
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7960701416600238807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c25ae48ea0a3ec04daed51288b6abd6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: 0
