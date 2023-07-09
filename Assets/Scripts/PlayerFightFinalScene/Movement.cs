@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerFight : MonoBehaviour
+public class Movement : MonoBehaviour
 {
     private float horizontal;
     private float speed = 125f;
@@ -13,8 +13,8 @@ public class PlayerFight : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
 
-    public Animator animator;
-    private bool isAttacking = false;
+    [SerializeField] public Animator animator;
+
 
     void Update()
     {
@@ -28,7 +28,7 @@ public class PlayerFight : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-        else if(IsGrounded())
+        else if (IsGrounded())
         {
             animator.SetBool("IsJumping", false);
         }
@@ -36,20 +36,6 @@ public class PlayerFight : MonoBehaviour
         if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)        // Moving in air
         {
             rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.2f);
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (!isAttacking)
-            {
-                animator.SetTrigger("Attacking");
-                isAttacking = true;
-            }
-            else
-            {
-                animator.ResetTrigger("Attacking");
-                animator.SetTrigger("Attacking");
-            }
         }
 
         Flip();
@@ -75,4 +61,6 @@ public class PlayerFight : MonoBehaviour
             transform.localScale = localScale;
         }
     }
+
+
 }
