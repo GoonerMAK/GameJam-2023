@@ -4,20 +4,30 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
-    public Vector3 spawnPos; //spawn position
-    public float minSpawnX; //range between which animals will be spawned
-    public float maxSpawnX;
-    public float minSpawnY; //Y coordinate of spawn
-    public float maxSpawnY;
-    public float startDelay;
-    public float spawnInterval;
-    public GameObject[] villagerPrefabs;
-    public int villagerIndex;
+    public Vector2 spawnPos; //spawn position
+    public GameObject[] goodVillagerPrefabs;
+    public GameObject[] badVillagerPrefabs;
+    public int badVillagerIndex;
+    public int goodVillagerIndex;
+    public int goodVillagerCount;
+    public int badVillagerCount;
+    public Vector2[] spawnCoordinates; 
+    public int spawnCoordinatesIndex;
 
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomVillager", startDelay, spawnInterval);
+        goodVillagerCount = Random.Range(15, 20); //selects number of good villagers to spawn
+        badVillagerCount = Random.Range(8, 10); //selects number of bad vilagers to spawn 
+
+        for (int i = 0; i < goodVillagerCount; i++)
+        {
+            SpawnGoodVillager();
+        }
+        for (int i = 0; i < badVillagerCount; i++)
+        {
+            SpawnBadVillager();
+        }
     }
 
     // Update is called once per frame
@@ -26,13 +36,23 @@ public class SpawnManager : MonoBehaviour
         
     }
 
-    void SpawnRandomVillager()
+    void SpawnGoodVillager()
     {
-        villagerIndex = Random.Range(0, villagerPrefabs.Length);
-
-        spawnPos = new Vector3(Random.Range(minSpawnX, maxSpawnX), Random.Range(minSpawnY, maxSpawnY), 0);
+        goodVillagerIndex = Random.Range(0, goodVillagerPrefabs.Length);
+        spawnCoordinatesIndex = Random.Range(0, spawnCoordinates.Length);
+        spawnPos = spawnCoordinates[spawnCoordinatesIndex];
 
         //instantiate based on index of randomly generated index
-        Instantiate(villagerPrefabs[villagerIndex], spawnPos, villagerPrefabs[villagerIndex].transform.rotation);
+        Instantiate(goodVillagerPrefabs[goodVillagerIndex], spawnPos, goodVillagerPrefabs[goodVillagerIndex].transform.rotation);
+    }
+
+    public void SpawnBadVillager()
+    {
+        badVillagerIndex = Random.Range(0, badVillagerPrefabs.Length);
+        spawnCoordinatesIndex = Random.Range(0, spawnCoordinates.Length);
+        spawnPos = spawnCoordinates[spawnCoordinatesIndex];
+
+        //instantiate based on index of randomly generated index
+        Instantiate(badVillagerPrefabs[badVillagerIndex], spawnPos, badVillagerPrefabs[badVillagerIndex].transform.rotation);
     }
 }
