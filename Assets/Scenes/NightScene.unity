@@ -54553,19 +54553,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67a1e3ebadb67fe4e98a7a793f52d692, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnPos: {x: 0, y: 0, z: 0}
-  minSpawnX: -3
-  maxSpawnX: 5
-  minSpawnY: -9
-  maxSpawnY: 2
-  startDelay: 2
-  spawnInterval: 5
-  villagerPrefabs:
+  spawnPos: {x: 0, y: 0}
+  goodVillagerPrefabs:
   - {fileID: 4408552899548172747, guid: 132438512d945c14595e7a00d51436b6, type: 3}
   - {fileID: 4954291308498565968, guid: 12414ebfb6584cf4e8c3c077a5039c2b, type: 3}
   - {fileID: 1181066577235246848, guid: ba55840b49a9be44dbf95064e94a97f3, type: 3}
   - {fileID: 7960701416600238807, guid: bc3f5acfe45054143a6067a6b2d54abf, type: 3}
-  villagerIndex: 0
+  badVillagerPrefabs:
+  - {fileID: 4408552899548172747, guid: 311a4f0718b4f9848b8ec6c815b74d72, type: 3}
+  - {fileID: 4954291308498565968, guid: 050b29c092438654bb027943cdd9f556, type: 3}
+  - {fileID: 1181066577235246848, guid: 03d9e84bcc19e6e499b9a0ba5327ff68, type: 3}
+  - {fileID: 7960701416600238807, guid: 5c606c48746732c479862c751108a337, type: 3}
+  badVillagerIndex: 0
+  goodVillagerIndex: 0
+  goodVillagerCount: 0
+  badVillagerCount: 0
+  spawnCoordinates:
+  - {x: 3.25, y: 1.25}
+  - {x: -2.25, y: 0.25}
+  - {x: 2, y: -2.25}
+  - {x: 5, y: -2.25}
+  - {x: -3.5, y: -5.75}
+  - {x: -1.75, y: -7.75}
+  - {x: -3.5, y: -9.25}
+  - {x: 4.5, y: -7.75}
+  spawnCoordinatesIndex: 0
 --- !u!4 &213072429
 Transform:
   m_ObjectHideFlags: 0
