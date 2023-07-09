@@ -50,4 +50,22 @@ public class VillagerMovement : MonoBehaviour
 
         //facingRight = !facingRight;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Environment"))
+        {
+            horizontalSpeed = Random.Range(-0.5f, 0.5f);
+            verticalSpeed = Random.Range(-0.5f, 0.5f);
+
+            if (horizontalSpeed < 0 && facingRight)
+            {
+                Flip();
+            }
+            else if (horizontalSpeed > 0 && !facingRight)
+            {
+                Flip();
+            }
+        }
+    }
 }

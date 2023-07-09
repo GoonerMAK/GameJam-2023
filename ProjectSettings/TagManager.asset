@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Villager
   - Enemy
+  - Environment
   layers:
   - Default
   - TransparentFX
