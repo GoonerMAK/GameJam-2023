@@ -8,6 +8,8 @@ public class VillagerMovement : MonoBehaviour
     public float verticalSpeed;
     public bool facingRight;
 
+    [SerializeField] public Animator animator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -30,6 +32,13 @@ public class VillagerMovement : MonoBehaviour
     {
         transform.Translate(Vector3.up * Time.deltaTime * verticalSpeed);
         transform.Translate(Vector3.right * Time.deltaTime * horizontalSpeed);
+
+        float speed = Mathf.Abs(verticalSpeed * horizontalSpeed);
+
+        if(speed > 0)
+        {
+            animator.SetFloat("Speed", speed);
+        }
     }
 
     //to flip horizontally
