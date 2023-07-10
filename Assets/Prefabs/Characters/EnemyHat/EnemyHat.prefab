@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 390198099068436747}
   - component: {fileID: 1713582682581784670}
   - component: {fileID: -5425341462189687895}
+  - component: {fileID: -7065994834380256118}
   m_Layer: 7
   m_Name: EnemyHat
   m_TagString: Enemy
@@ -211,3 +212,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+--- !u!114 &-7065994834380256118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4954291308498565968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abab69c792f7a64bbc6dc30a5a2b11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4510825646312173766}
+  newAnimationClip: {fileID: 7400000, guid: 0560caf23eb531f41bd45bbf05cd6c2f, type: 2}
+  oldAnimationClip: {fileID: 7400000, guid: de5cf7f9994dfcd4fb6280ec80f67f04, type: 2}
+  enemyFormTime: 2
+  waitingTimeForEnemyForm: 10

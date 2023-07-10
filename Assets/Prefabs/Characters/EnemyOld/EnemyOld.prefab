@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4596963881467731806}
   - component: {fileID: 3912226402621389513}
   - component: {fileID: 8240420936320570398}
+  - component: {fileID: -5340979016550029201}
   m_Layer: 7
   m_Name: EnemyOld
   m_TagString: Enemy
@@ -211,3 +212,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+--- !u!114 &-5340979016550029201
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1181066577235246848}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abab69c792f7a64bbc6dc30a5a2b11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5289437685002068129}
+  newAnimationClip: {fileID: 7400000, guid: 9c05600f08bbec648bf8038e6a1d6e9d, type: 2}
+  oldAnimationClip: {fileID: 7400000, guid: 9c385ba3f8f17d449ab5254f3e4a9d50, type: 2}
+  enemyFormTime: 2
+  waitingTimeForEnemyForm: 10

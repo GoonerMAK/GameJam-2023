@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4389657710795408168}
   - component: {fileID: 6649328583694612014}
   - component: {fileID: -9145216536242719767}
+  - component: {fileID: -4883843335126380122}
   m_Layer: 7
   m_Name: EnemyBearded
   m_TagString: Enemy
@@ -211,3 +212,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+--- !u!114 &-4883843335126380122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4408552899548172747}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abab69c792f7a64bbc6dc30a5a2b11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 7515083178929784089}
+  newAnimationClip: {fileID: 7400000, guid: a69aebf09d053644183a61312cee52a9, type: 2}
+  oldAnimationClip: {fileID: 7400000, guid: 7417635d60596904b8fb216b6d7504d5, type: 2}
+  enemyFormTime: 2
+  waitingTimeForEnemyForm: 10
