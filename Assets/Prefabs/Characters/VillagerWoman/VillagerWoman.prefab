@@ -212,3 +212,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lives: 0
   animator: {fileID: 5941512002227638285}
+  dieSound: {fileID: 8300000, guid: 84611976e3e0506498f188974a7a71e6, type: 3}
+  dieAudio: {fileID: 0}
