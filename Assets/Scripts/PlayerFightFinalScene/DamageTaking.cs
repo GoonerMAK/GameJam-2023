@@ -8,6 +8,9 @@ public class DamageTaking : MonoBehaviour
     [SerializeField] public float maxHealth = 100f;
     [SerializeField] public float currentHealth;
 
+    public AudioClip dieSound;
+    public AudioSource dieAudio;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +27,7 @@ public class DamageTaking : MonoBehaviour
         {
             Die();
         }
-
+        dieAudio.PlayOneShot(dieSound);
     }
 
     void Die()

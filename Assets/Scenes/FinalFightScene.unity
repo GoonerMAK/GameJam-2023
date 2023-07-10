@@ -247,37 +247,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &204955464
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 204955465}
-  m_Layer: 0
-  m_Name: GroundCheck
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &204955465
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 204955464}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.1585, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1878198542}
-  m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!82 &66814750
 AudioSource:
   m_ObjectHideFlags: 0
@@ -374,6 +343,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &204955464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 204955465}
+  m_Layer: 0
+  m_Name: GroundCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &204955465
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 204955464}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.1585, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1878198542}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &277864956
 GameObject:
   m_ObjectHideFlags: 0
@@ -597,6 +597,8 @@ MonoBehaviour:
   animator: {fileID: 372465136}
   maxHealth: 100
   currentHealth: 0
+  dieSound: {fileID: 0}
+  dieAudio: {fileID: 0}
 --- !u!114 &372465132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -632,6 +634,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 372465136}
+  jumpAudio: {fileID: 0}
+  jumpSound: {fileID: 0}
 --- !u!61 &372465134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1240,6 +1244,8 @@ MonoBehaviour:
   animator: {fileID: 1267376962}
   maxHealth: 100
   currentHealth: 0
+  dieSound: {fileID: 0}
+  dieAudio: {fileID: 0}
 --- !u!114 &1267376958
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1275,6 +1281,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 1267376962}
+  jumpAudio: {fileID: 0}
+  jumpSound: {fileID: 0}
 --- !u!61 &1267376960
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2058,6 +2066,8 @@ MonoBehaviour:
   animator: {fileID: 1878198547}
   maxHealth: 100
   currentHealth: 0
+  dieSound: {fileID: 0}
+  dieAudio: {fileID: 0}
 --- !u!114 &1878198544
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2093,6 +2103,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 1878198547}
+  jumpAudio: {fileID: 0}
+  jumpSound: {fileID: 0}
 --- !u!61 &1878198546
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2507,6 +2519,8 @@ MonoBehaviour:
   enemyLayer:
     serializedVersion: 2
     m_Bits: 128
+  playerAudio: {fileID: 66814750}
+  hitSound: {fileID: 8300000, guid: c6d5d4d8966f24a41a320844db7d2bb2, type: 3}
 --- !u!61 &2096659995
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2570,6 +2584,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 2096659991}
+  jumpAudio: {fileID: 66814750}
+  jumpSound: {fileID: 8300000, guid: 9de64e6e98ef9b240b9b3bc7303dff6d, type: 3}
 --- !u!114 &2096659997
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2585,6 +2601,8 @@ MonoBehaviour:
   animator: {fileID: 2096659991}
   maxHealth: 100
   currentHealth: 0
+  dieSound: {fileID: 8300000, guid: 1f5053d63b1088c4fb3810fc15c57fc5, type: 3}
+  dieAudio: {fileID: 66814750}
 --- !u!1 &2099293131
 GameObject:
   m_ObjectHideFlags: 0
@@ -2743,6 +2761,8 @@ MonoBehaviour:
   animator: {fileID: 2107826622}
   maxHealth: 100
   currentHealth: 0
+  dieSound: {fileID: 0}
+  dieAudio: {fileID: 0}
 --- !u!114 &2107826618
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2761,6 +2781,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 2107826622}
+  jumpAudio: {fileID: 0}
+  jumpSound: {fileID: 0}
 --- !u!61 &2107826619
 BoxCollider2D:
   m_ObjectHideFlags: 0
