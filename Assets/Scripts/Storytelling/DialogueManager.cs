@@ -52,7 +52,7 @@ public class DialogueManager : MonoBehaviour
 
     public void NextScene()
     {
-        if(sceneIndex == 3)
+        if(sceneIndex == 5)
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
         }

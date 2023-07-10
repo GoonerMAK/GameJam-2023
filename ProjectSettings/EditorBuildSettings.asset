@@ -12,6 +12,12 @@ EditorBuildSettings:
     path: Assets/Scenes/NightSky.unity
     guid: c11f5610265d84e418e1b4c86a21f0e1
   - enabled: 1
+    path: Assets/Scenes/DayScene.unity
+    guid: bb5fe1dde6278be4fa75134a1515b361
+  - enabled: 1
+    path: Assets/Scenes/DaySky.unity
+    guid: 533f91908bb64544797fe03abfad6c4c
+  - enabled: 1
     path: Assets/Scenes/NightScene.unity
     guid: adc009fcb7585e443b3f15f0519873fb
   - enabled: 1

@@ -11,19 +11,19 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private float zoomStep, miniCamSize, maxCamSize;
 
-    [SerializeField]
-    private Collider2D collider;
+    //[SerializeField]
+    //private Collider2D collider;
 
-    private float mapMinX, mapMaxX, mapMinY, mapMaxY;
+    //private float mapMinX, mapMaxX, mapMinY, mapMaxY;
 
-    private void Awake()
-    {
-        mapMinX = collider.transform.position.x - collider.bounds.size.x / 2f;
-        mapMaxX = collider.transform.position.x + collider.bounds.size.x / 2f;
+    //private void
+    //{
+    //    mapMinX = collider.transform.position.x - collider.bounds.size.x / 2f;
+    //    mapMaxX = collider.transform.position.x + collider.bounds.size.x / 2f;
 
-        mapMinY = collider.transform.position.y - collider.bounds.size.y / 2f;
-        mapMaxY = collider.transform.position.y + collider.bounds.size.y / 2f;
-    }
+    //    mapMinY = collider.transform.position.y - collider.bounds.size.y / 2f;
+    //    mapMaxY = collider.transform.position.y + collider.bounds.size.y / 2f;
+    //}
 
     private void Update()
     {
@@ -41,7 +41,7 @@ public class CameraMovement : MonoBehaviour
         {
             Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
 
-            cam.transform.position = ClampCamera(cam.transform.position + difference);
+            cam.transform.position += difference;
         }
 
     }
@@ -51,7 +51,7 @@ public class CameraMovement : MonoBehaviour
         float newSize = cam.orthographicSize - zoomStep;
         cam.orthographicSize = Mathf.Clamp(newSize, miniCamSize, maxCamSize);
 
-        cam.transform.position = ClampCamera(cam.transform.position);
+        //cam.transform.position = ClampCamera(cam.transform.position);
     }
 
     public void ZoomOut()
@@ -59,22 +59,22 @@ public class CameraMovement : MonoBehaviour
         float newSize = cam.orthographicSize + zoomStep;
         cam.orthographicSize = Mathf.Clamp(newSize, miniCamSize, maxCamSize);
 
-        cam.transform.position = ClampCamera(cam.transform.position);
+        //cam.transform.position = ClampCamera(cam.transform.position);
     }
 
-    private Vector3 ClampCamera(Vector3 targetPosition)
-    {
-        float camHeight = cam.orthographicSize;
-        float camWidth = cam.orthographicSize * cam.aspect;
+    //private Vector3 ClampCamera(Vector3 targetPosition)
+    //{
+    //    float camHeight = cam.orthographicSize;
+    //    float camWidth = cam.orthographicSize * cam.aspect;
 
-        float minX = mapMinX + camWidth;
-        float maxX = mapMaxX - camWidth;
-        float minY = mapMinY + camHeight;
-        float maxY = mapMaxY - camHeight;
+    //    float minX = mapMinX + camWidth;
+    //    float maxX = mapMaxX - camWidth;
+    //    float minY = mapMinY + camHeight;
+    //    float maxY = mapMaxY - camHeight;
 
-        float newX = Mathf.Clamp(targetPosition.x, minX, maxX);
-        float newY = Mathf.Clamp(targetPosition.y, minY, maxY);
+    //    float newX = Mathf.Clamp(targetPosition.x, minX, maxX);
+    //    float newY = Mathf.Clamp(targetPosition.y, minY, maxY);
 
-        return new Vector3(newX, newY, targetPosition.z);
-    }
+    //    return new Vector3(newX, newY, targetPosition.z);
+    //}
 }
