@@ -8,11 +8,13 @@ public class PlayerFight : MonoBehaviour
     [SerializeField] public Animator animator;
     [SerializeField] private Transform attackPoint;
     private float attackRange = 12f;
-    private float attackDamage = 40f;
+    [SerializeField] private float attackDamage = 40f;
     [SerializeField] private LayerMask enemyLayer;
     private bool isAttacking = false;
     public AudioSource playerAudio;
     public AudioClip hitSound;
+
+    public KillCounter killCounter;
 
     void Update()
     {
@@ -57,10 +59,23 @@ public class PlayerFight : MonoBehaviour
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayer);
 
 
+        if (killCounter.DamageMultiplier() < 0)      // Killed more villagers
+        {
+            attackDamage = attackDamage - (killCounter.DamageMultiplier()) * 3;
+        }
+
+        else      // Killed more Enemies or equally killed villagers and enemies
+        {
+            attackDamage = attackDamage + (killCounter.DamageMultiplier()) * 5;
+        }
+
+
         // Damage all the Enemies
-        foreach(Collider2D enemy in hitEnemies)
+        foreach (Collider2D enemy in hitEnemies)
         {
             enemy.GetComponent<EnemyDMG>().TakeDamage(attackDamage);
+
+            Debug.Log("AttackDamage is" + attackDamage);
         }
 
         //play sound when attack done
