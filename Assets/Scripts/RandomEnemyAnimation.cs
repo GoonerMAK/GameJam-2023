@@ -1,0 +1,46 @@
+using System.Collections;
+using UnityEngine;
+
+public class RandomEnemyAnimation : MonoBehaviour
+{
+    public Animator animator;
+    public AnimationClip newAnimationClip;
+    public AnimationClip oldAnimationClip;
+
+    public float enemyFormTime = 2.0f;
+    public float waitingTimeForEnemyForm = 10.0f;
+
+    private void Start()
+    {
+        StartCoroutine(CallEnemyFormAppear());
+    }
+
+    IEnumerator CallEnemyFormAppear()
+    {
+        while (true)
+        {
+            EnemyFormAppear();
+
+            yield return new WaitForSeconds(waitingTimeForEnemyForm);
+        }
+    }
+
+    void EnemyFormAppear()
+    {
+        // Set the initial random time
+        float randomTime = Random.Range(0f, newAnimationClip.length);
+
+        animator.Play(newAnimationClip.name, -1, randomTime);
+        Debug.Log("Playing New Animation");
+
+        StartCoroutine(ReturnToOriginalAnimation());
+    }
+
+    IEnumerator ReturnToOriginalAnimation()
+    {
+        yield return new WaitForSeconds(enemyFormTime);
+
+        animator.Play(oldAnimationClip.name, -1);
+        Debug.Log("Playing Old Animation");
+    }
+}

@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 3430106093447233541}
   - component: {fileID: -1333525971868634686}
   - component: {fileID: 15367101766687786}
+  - component: {fileID: -9127760764008361956}
   m_Layer: 7
   m_Name: EnemyWoman
   m_TagString: Villager
@@ -211,3 +212,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+--- !u!114 &-9127760764008361956
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7960701416600238807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3abab69c792f7a64bbc6dc30a5a2b11e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5941512002227638285}
+  newAnimationClip: {fileID: 7400000, guid: 5df04e25f59020a4189f2152ab514561, type: 2}
+  oldAnimationClip: {fileID: 7400000, guid: 18d3157b00d24c24393ec4c8cdeef54b, type: 2}
+  enemyFormTime: 2
+  waitingTimeForEnemyForm: 10
