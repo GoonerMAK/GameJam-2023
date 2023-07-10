@@ -15,6 +15,9 @@ EditorBuildSettings:
     path: Assets/Scenes/NightScene.unity
     guid: adc009fcb7585e443b3f15f0519873fb
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/EvilPlayer.unity
+    guid: 352364bcd62a9bc4199fc560423755a7
+  - enabled: 1
+    path: Assets/Scenes/GoodPlayer.unity
+    guid: 7fd2659678512724abd90a2c06b48a22
   m_configObjects: {}

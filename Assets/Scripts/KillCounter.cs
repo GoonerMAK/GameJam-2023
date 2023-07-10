@@ -42,5 +42,23 @@ public class KillCounter : MonoBehaviour
         Debug.Log("Enemies killed: " + enemiesKilled);
     }
 
+    public void ShowKilledPeople()
+    {
+        Debug.Log("Villagers killed: " + villagersKilled  + "   Enemies killed: " + enemiesKilled);
+
+    }
+
+    public bool IsPlayerEvil()
+    {
+        if(villagersKilled > enemiesKilled)
+        {
+            return true;
+        }
+
+        else 
+        {
+            return false;
+        }
+    }
 
 }
