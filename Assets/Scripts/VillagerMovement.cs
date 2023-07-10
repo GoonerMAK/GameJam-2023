@@ -53,7 +53,7 @@ public class VillagerMovement : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Environment"))
+        if ((collision.gameObject.CompareTag("Environment")) || (collision.gameObject.CompareTag("Villager")) || (collision.gameObject.CompareTag("Enemy")))
         {
             horizontalSpeed = Random.Range(-0.5f, 0.5f);
             verticalSpeed = Random.Range(-0.5f, 0.5f);

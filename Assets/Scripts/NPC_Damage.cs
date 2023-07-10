@@ -7,11 +7,15 @@ public class NPC_Damage : MonoBehaviour
     [SerializeField] public float lives;
     [SerializeField] public Animator animator;
 
+    public AudioClip dieSound;
+    public AudioSource dieAudio;
+
 
     // Start is called before the first frame update
     void Start()
     {
         lives = 4;
+        dieAudio = Camera.main.GetComponent<AudioSource>();
     }
     public void TakeDamage(float damage)
     {
@@ -39,6 +43,7 @@ public class NPC_Damage : MonoBehaviour
     {
         //animator.SetBool("isDead", false);
         gameObject.SetActive(false);
+        dieAudio.PlayOneShot(dieSound);
     }
 
 }
