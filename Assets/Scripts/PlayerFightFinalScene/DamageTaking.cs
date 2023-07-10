@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class DamageTaking : MonoBehaviour
 {
     public Animator animator;
@@ -50,6 +50,7 @@ public class DamageTaking : MonoBehaviour
     void DisableGameObject()
     {
         gameObject.SetActive(false);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
     }
 
     public float CurrentHealth()
