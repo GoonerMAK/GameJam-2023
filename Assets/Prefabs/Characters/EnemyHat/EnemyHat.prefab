@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+  animator: {fileID: 4510825646312173766}
 --- !u!114 &-7065994834380256118
 MonoBehaviour:
   m_ObjectHideFlags: 0
