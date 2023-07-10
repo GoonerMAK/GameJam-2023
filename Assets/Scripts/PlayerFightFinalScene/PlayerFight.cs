@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class PlayerFight : MonoBehaviour
 {
-
+    public GameObject enemy;
     [SerializeField] public Animator animator;
     [SerializeField] private Transform attackPoint;
     private float attackRange = 12f;
-    private float attackDamage = 50f;
+    private float attackDamage = 30f;
     [SerializeField] private LayerMask enemyLayer;
     private bool isAttacking = false;
 
@@ -18,6 +18,15 @@ public class PlayerFight : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Attack();
+        }
+
+        if( enemy.GetComponent<EnemyDMG>().CurrentHealth() <= 0 )
+        {
+            Movement movementScript = GetComponent<Movement>();
+            if (movementScript != null)
+            {
+                movementScript.enabled = false;
+            }
         }
 
     }
@@ -44,7 +53,7 @@ public class PlayerFight : MonoBehaviour
         // Damage all the Enemies
         foreach(Collider2D enemy in hitEnemies)
         {
-            enemy.GetComponent<DamageTaking>().TakeDamage(attackDamage);
+            enemy.GetComponent<EnemyDMG>().TakeDamage(attackDamage);
         }
 
     }

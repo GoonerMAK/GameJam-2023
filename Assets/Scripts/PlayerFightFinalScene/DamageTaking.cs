@@ -33,6 +33,12 @@ public class DamageTaking : MonoBehaviour
 
         animator.SetBool("IsDead", true);
 
+        Movement movementScript = GetComponent<Movement>();
+        if (movementScript != null)
+        {
+            movementScript.enabled = false;
+        }
+
         this.enabled = false;
     }
 
@@ -40,10 +46,12 @@ public class DamageTaking : MonoBehaviour
 
     void DisableGameObject()
     {
-
-
         gameObject.SetActive(false);
     }
 
-    
+    public float CurrentHealth()
+    {
+        return currentHealth;
+    }
+
 }
