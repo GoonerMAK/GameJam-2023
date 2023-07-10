@@ -17,8 +17,8 @@ public class SpawnManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        goodVillagerCount = Random.Range(15, 20); //selects number of good villagers to spawn
-        badVillagerCount = Random.Range(8, 10); //selects number of bad vilagers to spawn 
+        goodVillagerCount = Random.Range(20, 25); //selects number of good villagers to spawn
+        badVillagerCount = Random.Range(14, 16); //selects number of bad vilagers to spawn 
 
         for (int i = 0; i < goodVillagerCount; i++)
         {
