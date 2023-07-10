@@ -42,12 +42,6 @@ public class KillCounter : MonoBehaviour
         Debug.Log("Enemies killed: " + enemiesKilled);
     }
 
-    public void ShowKilledPeople()
-    {
-        Debug.Log("Villagers killed: " + villagersKilled  + "   Enemies killed: " + enemiesKilled);
-
-    }
-
     public bool IsPlayerEvil()
     {
         if(villagersKilled > enemiesKilled)
@@ -59,6 +53,11 @@ public class KillCounter : MonoBehaviour
         {
             return false;
         }
+    }
+
+    public int DamageMultiplier()
+    {
+        return villagersKilled - enemiesKilled;
     }
 
 }

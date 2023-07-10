@@ -62826,6 +62826,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentTime: 0
-  startingTime: 10
+  startingTime: 30
   countdownText: {fileID: 78220411}
   killCounter: {fileID: 506368334}

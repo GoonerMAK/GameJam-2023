@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 public class Countdown : MonoBehaviour
 {
     [SerializeField] private float currentTime = 0f;
-    [SerializeField] private float startingTime = 3f;
+    [SerializeField] private float startingTime = 60f;
 
     public TextMeshProUGUI countdownText;
 
@@ -16,6 +16,10 @@ public class Countdown : MonoBehaviour
 
     private bool evil = false;
 
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -32,8 +36,6 @@ public class Countdown : MonoBehaviour
         if(currentTime <= 0)
         {
             currentTime = 0;
-
-            killCounter.ShowKilledPeople();
 
             evil = killCounter.IsPlayerEvil();
 
