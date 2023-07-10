@@ -8,7 +8,7 @@ public class PlayerFight : MonoBehaviour
     [SerializeField] public Animator animator;
     [SerializeField] private Transform attackPoint;
     private float attackRange = 12f;
-    private float attackDamage = 30f;
+    private float attackDamage = 40f;
     [SerializeField] private LayerMask enemyLayer;
     private bool isAttacking = false;
     public AudioSource playerAudio;
@@ -35,6 +35,11 @@ public class PlayerFight : MonoBehaviour
 
     private void Attack()
     {
+        if (GetComponent<DamageTaking>().CurrentHealth() <= 0)
+        {
+            return;
+        }
+
         // Play Attack Animation
         if (!isAttacking)
         {
