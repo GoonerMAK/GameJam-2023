@@ -14,7 +14,7 @@ PlayerSettings:
   accelerometerFrequency: 60
   companyName: DefaultCompany
   productName: BUET CSE FEST 2023 Game Jam Kopzz
-  defaultCursor: {fileID: 0}
+  defaultCursor: {fileID: 2800000, guid: f7e26d10ba58c97458870908e6538b09, type: 3}
   cursorHotspot: {x: 0, y: 0}
   m_SplashScreenBackgroundColor: {r: 0.13725491, g: 0.12156863, b: 0.1254902, a: 1}
   m_ShowUnitySplashScreen: 1
