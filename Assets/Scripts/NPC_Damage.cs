@@ -11,11 +11,12 @@ public class NPC_Damage : MonoBehaviour
     public AudioSource dieAudio;
     public float waitForDeath = 5.0f;
 
-    //counts how many villager and enemies killed
-    public int enemyCount;
-    public int villagerCount;
+    // Defining a delegate for the NPC death event
+    public delegate void NPCDeathEventHandler(string npcTag);
 
-    public Rigidbody2D npcRb;
+    // Defining the event itself
+    public static event NPCDeathEventHandler onNpcDeath;
+
 
 
     // Start is called before the first frame update
@@ -23,11 +24,6 @@ public class NPC_Damage : MonoBehaviour
     {
         lives = 4;
         dieAudio = Camera.main.GetComponent<AudioSource>();
-
-        enemyCount = 0;
-        villagerCount = 0;
-
-        npcRb = GetComponent<Rigidbody2D>();
     }
     public void TakeDamage(float damage)
     {
@@ -47,14 +43,10 @@ public class NPC_Damage : MonoBehaviour
         animator.SetBool("isDead", true);
         dieAudio.PlayOneShot(dieSound);
 
-        if (npcRb.CompareTag("Villager"))
-        {
-            villagerCount++;
-        }
-        else if (npcRb.CompareTag("Enemy"))
-        {
-            enemyCount++;
-        }
+        // Raising the NPC death event with the NPC's tag
+        onNpcDeath?.Invoke(gameObject.tag);
+
+        gameObject.tag = "Untagged";
 
         StartCoroutine(SetNPCInactive());
     }
