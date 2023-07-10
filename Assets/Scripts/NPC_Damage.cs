@@ -9,6 +9,7 @@ public class NPC_Damage : MonoBehaviour
 
     public AudioClip dieSound;
     public AudioSource dieAudio;
+    public float waitForDeath = 5.0f;
 
 
     // Start is called before the first frame update
@@ -32,18 +33,16 @@ public class NPC_Damage : MonoBehaviour
     {
         Debug.Log("NPC died");
 
-        //animator.SetBool("isDead", true);
+        animator.SetBool("isDead", true);
+        dieAudio.PlayOneShot(dieSound);
 
-        //this.enabled = false;
-
-        SetNPCInactive();
+        StartCoroutine(SetNPCInactive());
     }
 
-    void SetNPCInactive()
+    IEnumerator SetNPCInactive()
     {
-        //animator.SetBool("isDead", false);
+        yield return new WaitForSeconds(waitForDeath);
         gameObject.SetActive(false);
-        dieAudio.PlayOneShot(dieSound);
     }
 
 }
