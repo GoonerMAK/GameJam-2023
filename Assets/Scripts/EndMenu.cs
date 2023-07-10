@@ -9,4 +9,9 @@ public class EndMenu : MonoBehaviour
     {
         SceneManager.LoadScene(0);
     }
+
+    public void Continue()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+    }
 }
