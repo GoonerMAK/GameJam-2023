@@ -8,7 +8,7 @@ public class PlayerFight : MonoBehaviour
     [SerializeField] public Animator animator;
     [SerializeField] private Transform attackPoint;
     private float attackRange = 12f;
-    [SerializeField] private float attackDamage = 40f;
+    [SerializeField] private float attackDamage = 30f;
     [SerializeField] private LayerMask enemyLayer;
     private bool isAttacking = false;
     public AudioSource playerAudio;

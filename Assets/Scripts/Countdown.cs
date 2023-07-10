@@ -16,11 +16,6 @@ public class Countdown : MonoBehaviour
 
     private bool evil = false;
 
-    private void Awake()
-    {
-        DontDestroyOnLoad(gameObject);
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +41,9 @@ public class Countdown : MonoBehaviour
 
             else
             {
-                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+                int nextSceneIndex = SceneManager.GetActiveScene().buildIndex + 2;
+                Debug.Log("Loading scene with index: " + nextSceneIndex);
+                SceneManager.LoadScene(nextSceneIndex);
             }
         }    
     }
