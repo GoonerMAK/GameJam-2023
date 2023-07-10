@@ -5,6 +5,7 @@ using UnityEngine;
 public class NPC_Damage : MonoBehaviour
 {
     [SerializeField] public float lives;
+    [SerializeField] public Animator animator;
 
 
     // Start is called before the first frame update
@@ -27,6 +28,16 @@ public class NPC_Damage : MonoBehaviour
     {
         Debug.Log("NPC died");
 
+        //animator.SetBool("isDead", true);
+
+        //this.enabled = false;
+
+        SetNPCInactive();
+    }
+
+    void SetNPCInactive()
+    {
+        //animator.SetBool("isDead", false);
         gameObject.SetActive(false);
     }
 

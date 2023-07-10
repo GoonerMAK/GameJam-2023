@@ -211,3 +211,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lives: 0
+  animator: {fileID: 7515083178929784089}

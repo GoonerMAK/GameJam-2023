@@ -19,9 +19,15 @@ public class RandomEnemyAnimation : MonoBehaviour
     {
         while (true)
         {
-            EnemyFormAppear();
-
-            yield return new WaitForSeconds(waitingTimeForEnemyForm);
+            if (!animator.GetBool("isDead"))
+            {
+                EnemyFormAppear();
+                yield return new WaitForSeconds(waitingTimeForEnemyForm);
+            }
+            else
+            {
+                yield break; // Exit the coroutine if isDead is true
+            }
         }
     }
 
