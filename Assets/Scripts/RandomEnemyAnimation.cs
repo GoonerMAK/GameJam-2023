@@ -37,7 +37,6 @@ public class RandomEnemyAnimation : MonoBehaviour
         float randomTime = Random.Range(0f, newAnimationClip.length);
 
         animator.Play(newAnimationClip.name, -1, randomTime);
-        Debug.Log("Playing New Animation");
 
         StartCoroutine(ReturnToOriginalAnimation());
     }
@@ -47,6 +46,5 @@ public class RandomEnemyAnimation : MonoBehaviour
         yield return new WaitForSeconds(enemyFormTime);
 
         animator.Play(oldAnimationClip.name, -1);
-        Debug.Log("Playing Old Animation");
     }
 }
