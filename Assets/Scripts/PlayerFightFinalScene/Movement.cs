@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     private float horizontal;
     private float speed = 125f;
     private float jumpingPower = 400f;
+    private float additionalForce = 200f; 
     private bool isFacingRight = true;
 
     [SerializeField] private Rigidbody2D rb;
@@ -64,6 +65,14 @@ public class Movement : MonoBehaviour
             Vector3 localScale = transform.localScale;
             localScale.x *= -1f;
             transform.localScale = localScale;
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D trig)             
+    {
+        if (trig.gameObject.CompareTag("OnTop"))
+        {
+            rb.AddForce(Vector2.up * additionalForce, ForceMode2D.Force);
         }
     }
 
