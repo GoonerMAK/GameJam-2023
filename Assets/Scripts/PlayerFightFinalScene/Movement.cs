@@ -15,6 +15,9 @@ public class Movement : MonoBehaviour
 
     [SerializeField] public Animator animator;
 
+    public AudioSource jumpAudio;
+    public AudioClip jumpSound;
+
 
     void Update()
     {
@@ -26,6 +29,8 @@ public class Movement : MonoBehaviour
         {
             animator.SetBool("IsJumping", true);
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+
+            jumpAudio.PlayOneShot(jumpSound);
         }
 
         else if (IsGrounded())

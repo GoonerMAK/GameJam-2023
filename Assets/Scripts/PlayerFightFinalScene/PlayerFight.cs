@@ -11,6 +11,8 @@ public class PlayerFight : MonoBehaviour
     private float attackDamage = 30f;
     [SerializeField] private LayerMask enemyLayer;
     private bool isAttacking = false;
+    public AudioSource playerAudio;
+    public AudioClip hitSound;
 
     void Update()
     {
@@ -56,6 +58,8 @@ public class PlayerFight : MonoBehaviour
             enemy.GetComponent<EnemyDMG>().TakeDamage(attackDamage);
         }
 
+        //play sound when attack done
+        playerAudio.PlayOneShot(hitSound);
     }
 
     void OnDrawGizmosSelected()         // Drawing the attacking point so that we can see that in the editor
