@@ -9,7 +9,6 @@ public class TestingMovement : MonoBehaviour
     private float speed = 1f;
     private float jumpingPower = 4f;
     private bool isFacingRight = true;
-    public AudioClip walkSound;
     public AudioSource playerAudio;
     public AudioClip hitSound;
 
@@ -38,12 +37,6 @@ public class TestingMovement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.F))
         {
             Attack();
-        }
-
-        //play soound if horizontal and vertical inputs are taken
-        if (horizontal != 0 || vertical != 0)
-        {
-            playerAudio.PlayOneShot(walkSound);
         }
 
         Flip();

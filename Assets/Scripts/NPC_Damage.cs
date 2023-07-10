@@ -11,12 +11,23 @@ public class NPC_Damage : MonoBehaviour
     public AudioSource dieAudio;
     public float waitForDeath = 5.0f;
 
+    //counts how many villager and enemies killed
+    public int enemyCount;
+    public int villagerCount;
+
+    public Rigidbody2D npcRb;
+
 
     // Start is called before the first frame update
     void Start()
     {
         lives = 4;
         dieAudio = Camera.main.GetComponent<AudioSource>();
+
+        enemyCount = 0;
+        villagerCount = 0;
+
+        npcRb = GetComponent<Rigidbody2D>();
     }
     public void TakeDamage(float damage)
     {
@@ -35,6 +46,15 @@ public class NPC_Damage : MonoBehaviour
 
         animator.SetBool("isDead", true);
         dieAudio.PlayOneShot(dieSound);
+
+        if (npcRb.CompareTag("Villager"))
+        {
+            villagerCount++;
+        }
+        else if (npcRb.CompareTag("Enemy"))
+        {
+            enemyCount++;
+        }
 
         StartCoroutine(SetNPCInactive());
     }
