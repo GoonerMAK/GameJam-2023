@@ -7,6 +7,7 @@ using UnityEngine.SceneManagement;
 public class DialogueManager : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
+    private int sceneIndex;
 
     private Queue<string> lines;
 
@@ -14,6 +15,7 @@ public class DialogueManager : MonoBehaviour
     void Start()
     {
         lines = new Queue<string>();
+        sceneIndex = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void StartDialogue (Dialogue dialogue)
@@ -50,7 +52,14 @@ public class DialogueManager : MonoBehaviour
 
     public void NextScene()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        if(sceneIndex == 3)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+        }
+        else
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
 }
