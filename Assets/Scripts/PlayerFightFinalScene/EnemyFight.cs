@@ -8,7 +8,7 @@ public class EnemyFight : MonoBehaviour
     [SerializeField] public Animator animator;
     [SerializeField] private Transform attackPoint;
     private float attackRange = 12f;
-    private float attackDamage = 50f;
+    private float attackDamage = 30f;
     [SerializeField] private LayerMask playerLayer;
     private bool isAttacking = false;
 

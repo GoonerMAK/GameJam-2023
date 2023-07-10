@@ -7,7 +7,6 @@ public class TestingMovement : MonoBehaviour
     private float horizontal;
     private float vertical;
     private float speed = 1f;
-    private float jumpingPower = 4f;
     private bool isFacingRight = true;
     public AudioClip walkSound;
     public AudioSource playerAudio;
